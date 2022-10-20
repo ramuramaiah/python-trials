@@ -68,6 +68,8 @@ def flat_to_hierarchy(entries:List[str]):
         child:TreeNode=None
         splits:List[str] = entry.split("/")
         for i, val in enumerate(splits):
+            if splits[i] == "":
+                continue
             if i == 0:
                 temp:TreeNode = TreeNode.find_node(splits[i])
                 if temp is None:
